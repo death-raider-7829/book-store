@@ -58,7 +58,7 @@ section nav .social_icon i{
     font-size: 20px;
     grid-column: 3;
 }
-
+//new section 2
 section nav .social_icon i:hover{
     color: #089da1;
     cursor: pointer;
