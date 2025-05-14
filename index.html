@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Store Website</title>
+    <link rel="stylesheet" href="css.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hind&display=swap" rel="stylesheet"> -->
+
+</head>
+<body>
+    <div id="preferences">
+        <h2>Choose Your Preferred Genre:</h2>
+        <select id="genreSelection">
+            <option value="thriller">Thriller</option>
+            <option value="romance">Romance</option>
+            <option value="selfhelp">Self Help</option>
+            <option value="history">History</option>
+            <option value="sci-fi">Science Fiction</option>
+            <option value="fantasy">Fantasy</option>
+            <option value="autobiography">Autobiography</option>
+        </select>
+        <button onclick="recommendBooks()">Get Recommendations</button>
+    </div>
+    
+    <div id="recommendedBooks"></div>
+    <script>
+        // Array to store books and their associated genres
+        const books = [
+            { title: "Rebecca", genre: "thriller", author: "Daphne du Maurier", price: "RS 349" },
+            { title: "The Hating Game", genre: "romance", author: "Sally Thorne", price: "RS 450" },
+            { title: "Atomic Habits", genre: "selfhelp", author: "James Clear", price: "RS 300" },
+            { title: "48 Laws Of Power", genre: "selfhelp", author: "Robert Greene", price: "RS 349" },
+            { title: "Rise and Fall of The Third Reich", genre: "history", author: "William L. Shirer", price: "RS 399" },
+            { title: "1984", genre: "sci-fi", author: "George Orwell", price: "RS 399" },
+            { title: "Dune", genre: "fantasy", author: "Frank Herbert", price: "RS 399" },
+            { title: "Becoming", genre: "autobiography", author: "Michelle Obama", price: "RS 499" },
+        ];
+    
+        // Function to recommend books based on user selection
+        function recommendBooks() {
+            const genre = document.getElementById('genreSelection').value;
+            const recommended = books.filter(book => book.genre === genre);
+            
+            const recommendedBooksDiv = document.getElementById('recommendedBooks');
+            recommendedBooksDiv.innerHTML = "";  // Clear previous recommendations
+    
+            if (recommended.length > 0) {
+                recommendedBooksDiv.innerHTML = "<h2>Recommended Books:</h2>";
+                recommended.forEach(book => {
+                    const bookDiv = document.createElement('div');
+                    bookDiv.classList.add('bookCard');
+                    bookDiv.innerHTML = `
+                        <h3>${book.title}</h3>
+                        <p><strong>Author:</strong> ${book.author}</p>
+                        <p><strong>Price:</strong> ${book.price}</p>
+                    `;
+                    recommendedBooksDiv.appendChild(bookDiv);
+                });
+            } else {
+                recommendedBooksDiv.innerHTML = "<p>No books found in this genre.</p>";
+            }
+        }
+    </script>
+        
+    
+    <section>
+
+        <nav>
+
+            <div class="logo">
+                <img src="Screenshot 2024-11-06 170048.png">
+            </div>
+
+            <ul>
+                <li><a href="#Home">Home</a></li>
+                <li><a href="#Featured">Featured</a></li>
+                <li><a href="#Arrivals">Arrivals</a></li>
+                <li><a href="#C">Reviews</a></li>
+                <li><a href="D:\fee project login page\log in page\log in .html">Log In</a></li>
+                <li><a href="#About">About</a></li>
+                <li><a href="D:\fee project login page\parallax page\html.html">Bonus Features</a></li>
+            </ul>
+
+            <div class="social_icon">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <i class="fa-solid fa-heart"></i>
+            </div>
+
+        </nav>
+
+        <div id=Home class="main">
+
+            <div class="main_tag">
+                <h1>WELCOME TO<br><span>The Rough Pages</span></h1>
+
+                <pre>
+                    Welcome to The Rough Pages, your go-to
+                     destination for a diverse selection of books 
+                     across various genres. Our mission is to foster a 
+                     love for reading by providing a seamless and 
+                     enjoyable shopping experience. Whether you're
+                    a fan of thrilling mysteries, heartwarming
+                    romances, or insightful non-fiction, we have 
+                    something for every reader.
+                     
+                </pre>
+
+            </div>
+
+            <div class="main_img">
+                <img src="table.png">
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- flipping book Animation -->
+    <!-- <section>
+        <div class="book">
+            <div class="pg pg1"></div>
+            <div class="pg pg2"></div>
+        </div>
+    </section> -->
+
+
+
+
+    <!--Services-->
+
+    <div class="services">
+
+        <div class="services_box">
+
+            <div class="services_card">
+                <i class="fa-solid fa-truck-fast"></i>
+                <h3>Fast Delivery</h3>
+                <p>
+                    Order and you shall recive it. 
+                </p>
+            </div>
+
+            <div class="services_card">
+                <i class="fa-solid fa-headset"></i>
+                <h3>24 x 7 Services</h3>
+                <p>
+                    Our site ensures that the flow of knowledge dosen't ever stop. 
+                </p>
+            </div>
+
+            <div class="services_card">
+                <i class="fa-solid fa-tag"></i>
+                <h3>Best Deal</h3>
+                <p>
+                    Ensuring everyone can get to learn, explore and grow. 
+                </p>
+            </div>
+
+            <div class="services_card">
+                <i class="fa-solid fa-lock"></i>
+                <h3>Secure Payment</h3>
+                <p>
+                    Don't worry...we don't scam. 
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!--Books-->
+
+    <div id=Featured class="featured_boks">
+
+        <h1>Featured Books</h1>
+
+        <div class="featured_book_box">
+
+            <div class="featured_book_card">
+
+                <div class="featurde_book_img">
+                    <img src="rebacca.jpg">
+                </div>
+
+                <div class="featurde_book_tag">
+                    <h2>Featured Books</h2>
+                    <p class="writer">Rebecca</p>
+                    <div class="categories">Thriller, Horror, Romance</div>
+                    <p class="book_price">RS 349<sub><del>RS 400</del></sub></p>
+                    <a href="#" class="f_btn">Add To Cart</a>
+                </div>               
+
+            </div>
+
+            <div class="featured_book_card">
+
+                <div class="featurde_book_img">
+                    <img src="ah.jpg">
+                </div>
+
+                <div class="featurde_book_tag">
+                    <h2>Featured Books</h2>
+                    <p class="writer">Atomic Habits</p>
+                    <div class="categories">Self Help, Personal Development</div>
+                    <p class="book_price">RS 300<sub><del>RS 350</del></sub></p>
+                    <a href="#" class="f_btn">Add To Cart</a>
+                </div>               
+
+            </div>
+
+            <div class="featured_book_card">
+
+                <div class="featurde_book_img">
+                    <img src="48.jpg">
+                </div>
+
+                <div class="featurde_book_tag">
+                    <h2>Featured Books</h2>
+                    <p class="writer">48 Laws Of Power</p>
+                    <div class="categories">Self Help, Strategy</div>
+                    <p class="book_price">RS 349<sub><del>RS 400</del></sub></p>
+                    <a href="#" class="f_btn">Add To Cart</a>
+                </div>               
+
+            </div>
+
+            <div class="featured_book_card">
+
+                <div class="featurde_book_img">
+                    <img src="hating.jpg">
+                </div>
+
+                <div class="featurde_book_tag">
+                    <h2>Featured Books</h2>
+                    <p class="writer">The Hating Game</p>
+                    <div class="categories">Love, Comedy</div>
+                    <p class="book_price">RS 450<sub><del>RS 550</del></sub></p>
+                    <a href="#" class="f_btn">Add To Cart</a>
+                </div>               
+
+            </div>
+
+            <div class="featured_book_card">
+
+                <div class="featurde_book_img">
+                    <img src="reigh.jpg">
+                </div>
+
+                <div class="featurde_book_tag">
+                    <h2>Featured Books</h2>
+                    <p class="writer">Rise and Fall of The Third Reich: A history of Nazi Germany</p>
+                    <div class="categories">History</div>
+                    <p class="book_price">RS 399<sub><del>RS 500</del></sub></p>
+                    <a href="#" class="f_btn">Add To Cart</a>
+                </div>               
+
+            </div>
+            
+            <div class="featured_book_card">
+
+                <div class="featurde_book_img">
+                    <img src="mockingbird.jpg">
+                </div>
+
+                <div class="featurde_book_tag">
+                    <h2>Featured Books</h2>
+                    <p class="writer">To Kill The Mocking Bird</p>
+                    <div class="categories">Drama</div>
+                    <p class="book_price">RS 349<sub><del>RS 400</del></sub></p>
+                    <a href="#" class="f_btn">Add To Cart</a>
+                </div>               
+
+            </div>
+
+            <div class="featured_book_card">
+
+                <div class="featurde_book_img">
+                    <img src="1984.jpg">
+                </div>
+
+                <div class="featurde_book_tag">
+                    <h2>Featured Books</h2>
+                    <p class="writer">1984</p>
+                    <div class="categories">Science Fiction, Dystopian</div>
+                    <p class="book_price">RS 399<sub><del>RS 450</del></sub></p>
+                    <a href="#" class="f_btn">Add To Cart</a>
+                </div>               
+
+            </div>
+
+            <div class="featured_book_card">
+
+                <div class="featurde_book_img">
+                    <img src="becoming.jpg">
+                </div>
+
+                <div class="featurde_book_tag">
+                    <h2>Featured Books</h2>
+                    <p class="writer">Becoming</p>
+                    <div class="categories">Autobiography</div>
+                    <p class="book_price">RS 499<sub><del>RS 599</del></sub></p>
+                    <a href="#" class="f_btn">Add To Cart</a>
+                </div>               
+
+            </div>
+
+            <div class="featured_book_card">
+
+                <div class="featurde_book_img">
+                    <img src="dune.jpg">
+                </div>
+
+                <div class="featurde_book_tag">
+                    <h2>Featured Books</h2>
+                    <p class="writer">Dune</p>
+                    <div class="categories">Fantasy</div>
+                    <p class="book_price">RS 399<sub><del>RS 499</del></sub></p>
+                    <a href="#" class="f_btn">Add To Cart</a>
+                </div>               
+
+            </div>
+
