@@ -1,4 +1,4 @@
-arrivals .arrivals_box .arrivals_card .arrivals_image{
+.arrivals .arrivals_box .arrivals_card .arrivals_image{
     width: 150px;
     height: 200px;
     margin: 0 auto;
