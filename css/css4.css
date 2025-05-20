@@ -1,6 +1,6 @@
 .arrivals .arrivals_box .arrivals_card .arrivals_image{
     width: 150px;
-    height: 220px;
+    height: 200px;
     margin: 0 auto;
     cursor: pointer;
     box-shadow: 0 0 8px rgba(0,0,0,0.5);
